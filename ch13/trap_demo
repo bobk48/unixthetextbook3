@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Intercept signals 1, 2, 3, 15, and 18 and ignore them 
+trap '' 1 2 3 15 18
+
+# Set the secret code 
+secretcode=agent007
+
+# Get user input
+echo "Guess the code!"
+echo -e "Enter your guess: \c" 
+read yourguess
+
+# As long as the user input is the secret code (agent007 in this case),
+# loop here: display a message and take user input again. When the user
+# input matches the secret code, terminate the loop and execute the
+# following echo command.
+while [ "$secretcode" != "$yourguess" ] 
+do
+   echo "Good guess but wrong. Try again!" 
+   echo -e "Enter your guess: \c"
+   read yourguess 
+done
+echo "Wow! You are a genius!" 
+exit 0

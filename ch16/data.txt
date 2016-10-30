@@ -1,0 +1,6 @@
+Conditions,23,45.8
+Methods,12,11.75
+Objects,40,17.1
+Modules,1023,1.4
+Dictionaries,45,120.71
+Comprehensions,5,234.75

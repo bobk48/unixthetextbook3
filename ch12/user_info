@@ -1,0 +1,12 @@
+#!/bin/sh 
+for user 
+do
+# Don’t display anything if a login name is not found in /etc/passwd 
+   grep "^"`echo $user":"` /etc/passwd 1> /dev/null 2>&1
+   if [ $? -eq 0 ]
+        then
+           echo -n "$user:      "
+           grep "^"`echo $user":"` /etc/passwd | cut -f5 -d':'
+   fi
+done
+exit 0

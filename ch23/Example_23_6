@@ -1,0 +1,9 @@
+#!/bin/sh
+# To backup additional directories, put more pathnames in the following command,
+#separated by spaces, such as /home/bob /home/sarwar /home/blahblah.
+backup_source=/home/bob
+backup_destination=/home/bob/simple_backup
+filename=back1.tgz
+echo “Backing up your UNIX home directory”
+tar cvpzf $backup_destination/$filename $backup_source
+echo “Backup Complete”

@@ -1,0 +1,13 @@
+#!/bin/sh 
+secretcode=agent007 
+echo "Guess the code!"
+echo -n "Enter your guess: " 
+read yourguess
+while [ "$secretcode" != "$yourguess" ]
+do
+        echo "Good guess but wrong. Try again!"
+        echo -n "Enter your guess: "
+        read yourguess
+done
+echo "Wow! You are a genius!!" 
+exit 0

@@ -1,0 +1,36 @@
+#!/bin/sh
+if [ $# = 0 ] 
+   then
+	echo "Usage: $0 name" 
+	exit 1
+fi
+OutputData()
+{
+   echo "Infomation about $user_input"
+   (grep -i "$user_input"| sort) << DIRECTORY
+
+	John Doe	555.232.0000	johnd@somedomain.com
+	Jenny Great	444.6565.1111	jg@new.somecollege.edu
+	David Nice	999.111.3333	david_nice@xyz.org
+	Don Carr	555.111.3333	dcarr@old.hoggie.edu
+	Masood Shah	666.010.9820	shah@Garments.com.pk
+	Jim Davis	777.000.9999	davis@great.adviser.edu
+	Art Pohm	333.000.8888	art.pohm@great.professor.edu
+	David Carr	777.999.2222	dcarr@net.net.gov
+
+DIRECTORY
+   echo	# A blank line betweek two records
+}
+
+# As long as there is at least one command line argument (name), take the
+# first name, call the OutputData function to search the DIRECTORY and
+# display the line(s) containing the name, shift this name left by one
+# position, and repeat the process.
+
+while [ $# != 0 ] 
+do
+   user_input="$1"	# Get the next command line argument (name)
+   OutputData		# Display info about the next name 
+   shift		# Get the following name
+done
+exit 0

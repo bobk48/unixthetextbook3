@@ -1,0 +1,5 @@
+#!/bin/csh
+    foreach people ( Debbie Jamie John Kitty Kuhn Shah )
+    echo $people
+end
+exit 0

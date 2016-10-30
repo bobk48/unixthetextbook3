@@ -1,0 +1,12 @@
+#!/bin/csh
+set secretcode = agent007 
+echo "Guess the code!"
+echo -n "Enter your guess: " 
+set yourguess = `head -1`
+while ("$secretcode" != "$yourguess")
+    echo Good guess but wrong. Try again! 
+    echo -n "Enter your guess: "
+    set yourguess = `head -1`
+end
+echo "Wow! You are a genius\!!" 
+exit 0

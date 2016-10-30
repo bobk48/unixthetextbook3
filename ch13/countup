@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ $# != 1 ] 
+   then
+        echo "Usage: $0 integer-argument" 
+        exit 1
+fi
+target="$1"     # Set target to the number passed at the command line 
+current=1       # The first number to be displayed
+# Loop here until the current number becomes greater than the target 
+while [ $current -le $target ]
+do
+        echo -n "$current "
+        current=`expr $current + 1`
+done
+echo    # Move cursor to the next line
+exit 0

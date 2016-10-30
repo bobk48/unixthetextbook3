@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# File Name: ~/unix3e/BourneShell/diff2
+# Author:	Syed Mansoor Sarwar
+# Written: August 28, 2004
+# Modified: August 28, 2004, July 29, 2014
+# Purpose: To see if the two files passed as command line arguments
+#	are same or different
+# Brief Description: 
+#	Read a line from each file and compare them. If
+#	the lines are the same, continue. If they are
+#	different, display the two lines and exit. If one
+#	of the files finishes before the other, display a
+#	message and exit. Otherwise, the files are the
+#	same; display an appropriate message and exit. 
+
+if [ $# != 2 ]
+   then
+	echo "Usage: $0 file1 file2" 
+	exit 1
+   elif [ ! -f "$1" ] 
+   then
+	echo "$1 is not an ordinary file" 
+	exit 1
+   elif [ ! -f "$2" ] 
+   then
+	echo "$2 is not an ordinary file" 
+	exit 1
+   else
+	:
+fi 
+file1="$1" 
+file2="$2"
+
+# Open files for reading and assign them file descriptors 3 and 4
+
+exec 3< "$file1"
+exec 4< "$file2"
+
+# Read a line each from both files and compare. If both reach EOF, then files
+# are the same. Otherwise, they are different. 0<&3 is used to attach standard
+# input of the read line1 command to file descriptor 3, 0<&4 is used to attach
+# standard input of the read line2 command to file descriptor 4. 
+
+while read line1 0<&3
+do
+   if read line2 0<&4 
+	then
+	# if lines are different, the two files are not the same 
+	   if [ "$line1" != "$line2" ]
+		then
+		   echo "$1 and $2 are different." 
+		   echo " $1: $line1"
+		   echo " $2: $line2" 
+		   exit 1
+	   fi
+	else
+	   # if EOF for file2 reached, file1 is bigger than file2
+	   echo "$1 and $2 are different and $1 is bigger than $2."
+	   exit 1
+	fi
+done
+# if EOF for file1 reached, file2 is bigger than file1. Otherwise, the two
+# files are the same. 0<&4 is used to attach standard input of read to file
+# descriptor 4
+if read line2 0<&4 
+   then
+	echo "$1 and $2 are different and $2 is bigger than $1." 
+	exit 1
+   else
+	echo "$1 and $2 are the same!" 
+	exit 0
+fi
+
+# Close files corresponding to descriptors 3 and 4 
+exec 3<&-
+exec 4<&-

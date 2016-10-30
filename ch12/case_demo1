@@ -1,0 +1,19 @@
+#!/bin/sh
+echo "Use one of the following options:"
+echo "  d:    To display today’s date and present time"
+echo "  l:    To see the listing of files in your present working directory"
+echo "  w:    To see who’s logged in"
+echo "  q:    To quit this program"
+echo -n "Enter your option and hit <Enter>: "
+read option
+case "$option" in
+        d)    date
+                ;;
+        l)    ls
+                ;;
+        w)    who
+                ;;
+        q)    exit 0
+                ;;
+esac
+exit 0

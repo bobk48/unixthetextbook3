@@ -1,0 +1,5 @@
+#!/bin/csh
+echo -n "Enter input: " 
+set line = `head -1`  
+echo "You entered: $line" 
+exit 0

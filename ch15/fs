@@ -1,0 +1,58 @@
+#!/bin/csh 
+
+# File Name:	~/unix3e/CShell/fs
+# Author:	Syed Mansoor Sarwar
+# Written:	August 16, 2004
+# Modified:	May 11, 2004; September 13, 2014
+# Purpose:	To add the sizes of all the files in a directory passed as
+#		command line argument
+# Brief Description: Maintain running sum of file sizes in a numeric variable
+#			called sum, starting with 0. Read all the file names
+#			by using the pipeline of ls, more, and while commands.
+#			Get the size of the next file and add it to the running
+#			sum. Stop when all file names have been processed and
+#			display the answer. 
+
+if ( $# == 0 ) then	# If no command line argument, the 
+			# set directory to current directory
+	set directory = "." 
+   else if ( $# != 1 ) then	# If more then one command line argument 
+				# then display command syntax
+	echo "Usage: $0 [directory name]" 
+	exit 1
+   else if ( ! -e "$1" ) then	# If one command line argument, but file
+				# does not exist, display error message
+        echo "$1 : File does not exist"
+        exit 1
+   else if ( ! -d "$1" ) then 	# If one command line argument, but is
+				# not a directory, show command syntax
+	echo "Usage: $0 [directory name]" 
+	exit 1
+   else
+	set directory="$1"	# If one command line argument and it is a
+			# directory, prepare to perform the task
+endif
+
+# Initialize files array to file names in the specified directory 
+set files = `ls $directory`
+@ nfiles = $#files # Number of files in the specified directory into nfiles
+@ index = 1     # Array index initialized to point to the first file name
+@ sum = 0       # Running sum initialized to 0
+
+if ( "$nfiles" == 0 ) then
+    echo "$directory : Empty directory"
+    exit 0
+endif
+
+while ( $index <= $nfiles )     # For as long as a file name is left in files
+    set thisfile = $directory/$files[$index]
+    if ( -f "$thisfile" ) then    # If the next file is an ordinary file
+	set argv = `ls -l $thisfile`    # Set command line arguments
+	@ sum = $sum + $argv[5]         # Add file size to the running total
+	@ index++  
+    else
+	@ index++
+    endif
+end
+echo "The size of all ordinary files in $directory is $sum bytes."
+exit 0

@@ -1,0 +1,26 @@
+#!/bin/csh
+echo "Use one of the following options:"
+echo " d or D: To display today’s date and present time"
+echo " l or L: To see the listing of files in your present working directory"
+echo " w or W: To see who is logged in"
+echo " q or Q: To quit this program"
+echo -n "Enter your option and hit <Enter>: "
+set option = `head -1`
+switch ("$option")
+    case [dD]:
+	date
+	breaksw 
+    case [lL]:
+	ls
+	breaksw
+    case [wW]:
+	who
+	breaksw
+    case [qQ]:
+	exit 0
+    default:
+	echo "Invalid option; try running the program again."
+	exit 1
+	breaksw
+endsw
+exit 0

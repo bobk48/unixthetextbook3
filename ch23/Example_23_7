@@ -1,0 +1,78 @@
+#!/usr/bin/python
+# rsync_daily.sh
+# daily local rotating backup with remote script using rsync
+#
+import time
+import datetime
+import os
+import shutil
+import UserString
+def backupserver():
+	debug_flag = "debug"
+	sources = ["/etc/aliases", "/etc/resolv.conf", "/etc/hosts", 
+	 		   "/etc/named.conf", "/etc/group","/etc/dovecot.conf", 
+	 		   "/var/www/cgi-bin","/etc/httpd","/var/www/html"]
+	localsources = ["/Volumes/NO NAME/onix", "/Volumes/NO NAME/projects",
+				"/Users/me/myprojects", "/Users/me/bin"]
+	localcode = ["/Volumes/NO NAME/projects" ]
+	codetarget = "/Volumes/PC Backups/Code Backups/"
+	target = "/Volumes/PC Backups/Daily Backups/"
+	host = "www.mysite.com"
+	user = "me"
+	# Target can be reached, trigger a rotation of the snapshot directories
+	if (debug_flag == "debug"):
+	        print "Date: " + str(datetime.date.today())
+	        print host +" is up, rotating snapshots."
+
+	# check to see if directories exist	
+	i = 1
+	while i <= 5:
+		temp_path = target + str(i) + "/"
+		if not os.path.exists( temp_path ):
+			try:
+				os.makedirs( temp_path )
+				print "Created " + temp_path
+			except:
+				print "Couldn't create " + temp_path
+		i = i + 1
+	# cycle backups
+	# first delete #5
+	print "Deleting oldest archive"
+	shutil.rmtree( target + "5" )
+	# cycle 2 - 4
+	print "Cycle backups"
+	os.rename( target + "4", target + "5")	
+	os.rename( target + "3", target + "4")
+	os.rename( target + "2", target + "3")
+	# do hard copy of 1
+	#os.system('find "' + target + '1" -print | cpio -pdl ' + target +"2")
+	print "Copy first backup"
+	# copy tree does a full copy whereas cpio does hard link copies (i.e. each copied file
+	# takes up no extra space
+	#shutil.copytree( target + "1", target + "2")
+	os.system('cd "' + target + '1"; find . -print | cpio -pdl "' + target + '2"')
+	print "Rsyncing"
+	# Rsync from local directories to local backup
+	for source in localsources:
+		print "Local directories " + source
+		os.system('rsync -azv -e   --delete --delete-excluded ' +
+		 		  '--exclude-from=/Users/me/.rsync/exclude "' + source + 
+		 		  '" "' + target+'1"')
+	# Rsync from the server to the local backup
+	for source in sources:
+		print "Downloading " + source
+		os.system('rsync -azv -e ssh  --delete --delete-excluded ' +
+				  '--exclude-from=/Users/me/.rsync/exclude ' + user + "@" + 
+				  host + ':"' + source + '" "' + target+'1"')
+	# Backup *just* the programming code
+	newfolder = codetarget + str(datetime.date.today())
+	# make the new directory
+	if not os.path.exists( newfolder ):
+		os.makedirs( newfolder )
+	# Here's the key line.  Find all the source files from our rsync backup and copy them as
+	# hard links.  
+	print "Backing up source"
+	os.system('cd "' + target + '1"; find . \( ' + " -name '*.cpp' -or -name 'Makefile'" +
+			 "-or -name  '*.c' -or -name '*.h' -or -name '*.lex' -or -name '*.y'" +
+			 " -or -name '*.bat' -or -name '*.py' \) " + ' -print | cpio -pdl "' + newfolder +'"')
+backupserver()

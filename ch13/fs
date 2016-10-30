@@ -1,0 +1,73 @@
+#!/bin/sh
+# File Name:	~/unix3e/BourneShell/fs
+# Author:	Syed Mansoor Sarwar
+# Written:	August 18, 2004
+# Modified:	May 8, 2004, August 20, 2004, Jul 28, 2014
+# Purpose:	To add the sizes of all the files in a directory passed as
+#		command line argument
+# Brief Description: Maintain running sum of file sizes in a numeric variable
+#	called sum, starting with 0. Read all the file names
+#	by using the pipeline of ls, more, and while commands.
+#	Get the size of the next file and add it to the running
+#	sum. Stop when all file names have been processed and
+#	display the answer. 
+if [ $# = 0 ]	# If no command line argument, the 
+		# set directory to current directory
+   then
+	directory="." 
+   elif [ $# != 1 ]	# If more then one command line argument 
+			# then display command syntax
+   then
+	echo "Usage: $0 [directory name]" 
+	exit 1
+   elif [ ! -e "$1" ]	# If one command line argument, but file
+			# does not exist, display error message
+   then
+        echo "$1: File does not exist"
+        exit 1
+   elif [ ! -d "$1" ] 	# If one command line argument, but is
+			# not a directory, show command syntax
+   then
+	echo "Usage: $0 [directory name]" 
+	exit 1
+   else
+	directory="$1"	# If one command line argument and it is a
+			# directory, prepare to perform the task
+fi
+
+# Get file count in the given directory; for empty directory, display a
+# message and quit.
+file_count=`ls $directory | wc -w`  # Get count of files in the directory 
+if [ $file_count -eq 0 ]	    # If no files, diaplay error message
+   then
+	echo "$directory: Empty directory." 
+	exit 0
+fi
+# For each file in the directory specified, add the file size to the running
+# total. The more command is used to output file names one per line so can
+# read command can be used to read file names.
+sum=0	# Running sum initialized to 0. 
+ls "$directory" | more |
+while read file 
+do
+   file="$directory"/"$file"	# Store the relative path name for each file 
+   if [ -f "$file" ]	# If it is an ordinary file
+	then	# then
+	   set -- `ls -l "$file"` # set command line arguments 
+	   sum=`expr $sum + $5`	  # Add file size to the running total.
+   fi
+   # Code to decrement the file_count variable and display the final sum
+   # if the last file has been processed.
+   if [ "$file_count" -gt 1 ] # Are more files left? If so, continue.
+	then
+	   file_count=`expr $file_count - 1` 
+	else
+	# Spell out the current directory 
+	if [ "$directory" = "." ]
+	   then
+	      directory="your current directory"
+	fi
+	echo "The size of all ordinary files in $directory is $sum bytes."
+   fi
+done
+exit 0

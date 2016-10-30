@@ -1,0 +1,8 @@
+#!/bin/csh
+echo "The command name is $0."
+echo "The number of command line arguments is $#argv." 
+echo -n "The values of the command line arguments are: "
+echo "$1 $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12"
+echo "Another way to display command line arguments is: $argv[*]"
+echo "Yet another is: $*"
+exit 0

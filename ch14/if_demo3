@@ -1,0 +1,25 @@
+#!/bin/csh
+if ( ( $#argv == 0 ) || ( $#argv > 1 ) ) then
+    echo "Usage: $0 ordinary_file"
+else if ( ! -e $1 ) then
+    echo "$1 : non-existant file"
+else if ( -d $1 ) then
+    set nfiles = `ls $1 | wc -w`
+	if ($nfiles == 0) then
+	    echo "$1 : Empty directory"
+	else
+	    echo "The number of files in $1 is : $nfiles."
+	endif
+else if ( -f $1 ) then
+    set filename = $argv[1]
+    set fileinfo = `ls -il $filename`
+    set inode = $fileinfo[1]
+    set perms = $fileinfo[2]
+    set size = $fileinfo[6]
+    echo "File Name:        $filename"
+    echo "Inode Number:     $inode"
+    echo "Permssions:       $perms"
+    echo "Size (bytes):     $size" 
+else
+    echo "$0: argument must be an ordinary file" 
+endif
