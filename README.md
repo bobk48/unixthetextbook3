@@ -1,7 +1,7 @@
 Welcome to the Github site of UNIX: The Textbook, 3rd edition!
 
-Here you will find In-Chapter Exercise Solutions, weblinks, and errata,
-all in Word .doc and .pdf formats.
+Here you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
+weblinks, and errata, all in Word .doc and .pdf formats.
 Advisory information will be updated regularly, and will give
 important changes in PC-BSD and Solaris since the printing of the book.
 You will also find program source code in UNIX-compatible text
@@ -36,9 +36,10 @@ Advisory 1. Posted 10/19/16
 PC-BSD has been "re-branded" TrueOS, but all of the material in the
 printed book still works perfectly well. That's because, at this time, 
 PC-BSD 10.3's(and earlier releases) website is still up and running.
-If and when PC-BSD is replaced by TrueOS (probably not within the next
-couple of years), we will notify you here at this Github site. More than
-likely, TrueOS will be developed to the point where it is a one-for-one
+If and when PC-BSD is replaced by TrueOS (probably not within the short
+term, if their Forums commentary is any indication), we will notify you 
+here at this Github site. 
+TrueOS will be developed to the point where it is a one-for-one
 replacement for the PC-BSD Desktop version, with of course some enhancements
 not shown in the printed book. At that time we will post information
 about those enhancements, and how they critically affect the content of
