@@ -1,4 +1,5 @@
 Welcome to the Github site of UNIX: The Textbook, 3rd edition!
+Follow us at Twitter, @unixthetextbook
 
 Here you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
 weblinks, and errata, all in Word .doc and .pdf formats.
