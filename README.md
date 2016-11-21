@@ -20,7 +20,7 @@ Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
 Advisory 4. Posted 11/20/16
-Added a couple more error I found to the Errata files! 
+Added a couple more errors I found to the Errata files! 
 
 Advisory 3. Posted 10/30/16
 We have updated the unixthetextbook3 repository so that it contains
