@@ -1,0 +1,24 @@
+# File Name:	~/unixbook/examples/Cshell/num_array_demo
+# Author:		Syed Mansoor Sarwar
+# Written:		August 16, 2004
+# Last Modified:	August 16, 2004; September 13, 2014
+# Purpose:		To demonstrate working with numeric arrays
+# Brief Description: Maintain running sum of numbers in a numeric variable called
+# 			sum, starting with 0. Read the next array value and add 
+# 			it to sum. When all elements have been read, stop and 
+# 			display the answer.
+
+#!/bin/csh
+
+# Initialize Fibonacci array to any number of Fibonacci numbers - first ten in this case
+
+set Fibonacci = ( 0 1 1 2 3 5 8 13 21 34 )
+@ size = $#Fibonacci	# Size of the Fibonacci array
+@ index = 1			# Array index initialized to point to the first element
+@ sum = 0			# Running sum initialized to 0
+while ( $index <= $size )
+    @ sum = $sum + $Fibonacci[$index]	# Update the running sum
+    @ index++				# Increment array index by 1
+end
+echo "The sum of the given $#Fibonacci numbers is $sum." 
+exit 0

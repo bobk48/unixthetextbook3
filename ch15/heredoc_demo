@@ -1,0 +1,20 @@
+#!/bin/csh
+ 
+cat << DataTag
+This is a simple use of the here document. This data is the 
+input to the cat command.
+DataTag
+ 
+# Second example
+mail -s "Weekly Meeting Reminder" $1 << WRAPPER 
+
+Hello,
+ 
+This is a reminder for the weekly faculty meeting tomorrow. 
+
+Mansoor
+
+WRAPPER
+
+echo "Sending mail to $1 ... done." 
+exit 0

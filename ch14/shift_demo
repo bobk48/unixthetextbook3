@@ -1,0 +1,9 @@
+#!/bin/csh
+echo "The name of the program is $0." 
+echo "The arguments are: $argv[*]."
+echo "The first three arguments are: $argv[1] $argv[2] $argv[3]." 
+shift
+echo "The name of the program is $0." 
+echo "The arguments are: $argv[*]."
+echo "The first three arguments are: $argv[1] $argv[2] $argv[3]" 
+exit 0

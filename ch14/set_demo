@@ -1,0 +1,11 @@
+#!/bin/csh 
+set filename = $argv[1]
+set argv = `ls -il $filename` 
+set inode = $argv[1]
+set perms = $argv[2]
+set size = $argv[6]
+echo "File Name:	$filename"
+echo "Inode Number:	$inode"
+echo "Permssions:	$perms"
+echo "Size (bytes):	$size" 
+exit 0

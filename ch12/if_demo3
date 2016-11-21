@@ -1,0 +1,39 @@
+#!/bin/sh
+if [ $# -eq 0 ]
+   then
+        echo "Usage: $0 file" 
+        exit 1
+   elif [ $# -gt 1 ] 
+   then
+        echo "Usage: $0 file" 
+        exit 1
+   elif [ -d "$1" ] 
+        then
+           nfiles=`ls "$1" | wc -w`
+           echo "The number of files in the $1 directory is $nfiles" 
+           exit 0
+   else
+        ls "$1" 2> /dev/null | grep "$1" 2> /dev/null 1>&2 
+        if [ $? -ne 0 ]
+           then
+                echo "$1: not found"
+                exit 1
+        fi
+        if [ -f "$1" ] 
+           then
+                filename=$1
+                set -- `ls -l $filename` 
+                perms="$1"
+                size="$5"
+                set `ls -i $filename`
+                inode="$1"
+                echo "File Name:        $filename"
+                echo "Inode Number:     $inode"
+                echo "Permssions:       $perms"
+                echo "Size (bytes):     $size" 
+                exit 0
+           else
+                echo "$0: argument must be an ordinary file or directory"
+                exit 1
+        fi
+fi

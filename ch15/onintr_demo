@@ -1,0 +1,29 @@
+#!/bin/csh
+
+# Intercept <Ctrl-C> and transfer control to the command at 
+backagain:
+    onintr interrupt
+
+# Set the secret code 
+set secretcode = agent007
+
+# Get user input
+echo "Guess the code\!"
+echo -n "Enter your guess: " 
+set yourguess = `head -1`
+
+# As long as the user input is not the secret code (agent007 in this case),
+# loop here: display a message and take user input gain. When the user
+# input matches the secret code, terminate the loop and execute the
+# following echo command.
+while ( "$secretcode" != "$yourguess" )
+    echo "Good guess but wrong. Try again\!"
+    echo -n "Enter your guess: "
+    set yourguess = `head -1`
+end
+echo "Wow! You are a genius\!"
+exit 0
+# Code executed when you press <Ctrl-C>
+interrupt:
+    echo "Nice try -- you cannot terminate me by <Ctrl-C>\!"
+    goto backagain

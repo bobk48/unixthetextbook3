@@ -1,0 +1,30 @@
+#!/bin/csh 
+
+echo -n "Enter a digit: " 
+set var1 = `head -1`
+if (("$var1" >= 1) && ("$var1" <= 9)) then
+   echo "Good input is $var1 \!!"
+else
+   echo "Bad input is $var1!!"
+endif
+exit 0
+Dr-Syed-Mansoor-Sarwars-MacBook-Pro:ch15 Mansoor$ cat dext
+#!/bin/csh 
+if ( $#argv == 0 ) then
+    echo "Usage: $0 name" 
+    exit 1
+endif
+set user_input = "$argv[1]"
+grep -i "$user_input" << DIRECTORY
+
+        John Doe        555.232.0000    johnd@somedomain.com
+        Jenny Great     444.6565.1111   jg@new.somecollege.edu
+        David Nice      999.111.3333    david_nice@xyz.org
+        Don Carr        555.111.3333    dcarr@old.hoggie.edu
+        Masood Shah     666.010.9820    shah@Garments.com.pk
+        Jim Davis       777.000.9999    davis@great.adviser.edu
+        Art Pohm        333.000.8888    art.pohm@great.professor.edu
+        David Carr      777.999.2222    dcarr@net.net.gov
+
+DIRECTORY
+exit 0

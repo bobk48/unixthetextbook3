@@ -1,0 +1,12 @@
+#!/bin/sh 
+filename="$1"
+set -- `ls -l $filename` 
+perms="$1"
+size="$5"
+set `ls -i $filename`
+inode="$1"
+echo "File Name:        $filename"
+echo "Inode Number:     $inode"
+echo "Permssions:       $perms"
+echo "Size (bytes):     $size" 
+exit 0

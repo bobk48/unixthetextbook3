@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# File Name:	~/unixbook/examples/Bshell/addall
+# Author:	Syed Mansoor Sarwar
+# Written:	August 18, 2004
+# Modified:	August 18, 2004, July 28, 2014
+# Purpose:	To demonstrate use of the expr command in processing
+#		numeric data
+# Brief Description:	Maintain running sum of numbers in a numeric
+#	variable called sum, initialized to 0. Read the next
+#	integer and add it to sum. When all elements have 
+#	been read, stop and display the answer. If the
+# 	program is run with no arguments, inform the user 
+#	of the command syntax 
+if [ $# = 0 ]
+   then
+	echo "Usage: $0 number-list" 
+	exit 1
+fi
+sum=0 	# Running sum initialized to 0
+count=0	# Count the count of numbers passed as arguments 
+while [ $# != 0 ]
+do
+   sum=`expr $sum + $1`		# Add the next number to the running sum 
+   count=`expr $count + 1`	# Update count of numbers added so far 
+   shift			# Shift the counted number out
+done
+# Display final sum
+echo "The sum of the given $count numbers is $sum." 
+exit 0
