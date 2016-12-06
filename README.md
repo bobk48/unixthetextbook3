@@ -19,6 +19,10 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+Advisory 5. Posted 12/5/16
+Added all the Figures in Chapter 3 as .jpegs, which should give you the ability
+to see them more clearly than they appear in the printed book.
+
 Advisory 4. Posted 11/20/16
 Added a couple more errors I found to the Errata files! 
 
@@ -51,4 +55,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 11/20/16
+Last revised 12/5/16
