@@ -1,44 +1,34 @@
-/* 
-	Remember to compile try:
-		1) gcc hi.c -o hi -lX11
-		2) gcc hi.c -I /usr/include/X11 -L /usr/X11/lib -lX11
-		3) gcc hi.c -I /where/ever -L /who/knows/where -l X11
-
-	Brian Hammond 2/9/96.    Feel free to do with this as you will!
-*/
-
-
-/* include the X library headers */
+/* Xlib and standard headers */
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
-
-/* include some silly stuff */
 #include <stdio.h>
 #include <stdlib.h>
 
-/* here are our X variables */
+/* Declare the X variables and pointers */
 Display *dis;
 int screen;
 Window win;
 GC gc;
 
-/* here are our X routines declared! */
+/* X routines */
 void init_x();
 void close_x();
 void redraw();
 
 main () {
-	XEvent event;		/* the XEvent declaration !!! */
-	KeySym key;		/* a dealie-bob to handle KeyPress Events */	
+	
+/*Initialization*/
+    XEvent event;		/* declare the XEvent */
+	KeySym key;		    /* KeyPress Events */	
 	char text[255];		/* a char buffer for KeyPress Events */
 
 	init_x();
 
-	/* look for events forever... */
+	/* Start the Event-Request Loop*/
 	while(1) {		
-		/* get the next event and stuff it into our event variable.
-		   Note:  only events we set the mask for are detected!
+		/* get the next event 
+		   We set the mask for events that we want detected
 		*/
 		XNextEvent(dis, &event);
 	
@@ -49,7 +39,7 @@ main () {
 		if (event.type==KeyPress&&
 		    XLookupString(&event.xkey,text,255,&key,0)==1) {
 		/* use the XLookupString routine to convert the invent
-		   KeyPress data into regular text.  Weird but necessary...
+		   KeyPress data into regular text.
 		*/
 			if (text[0]=='q') {
 				close_x();
@@ -57,11 +47,11 @@ main () {
 			printf("You pressed the %c key!\n",text[0]);
 		}
 		if (event.type==ButtonPress) {
-		/* tell where the mouse Button was Pressed */
+		/* report where the mouse Button was Pressed */
 			int x=event.xbutton.x,
 			    y=event.xbutton.y;
 
-			strcpy(text,"X is FUN!");
+			strcpy(text,"UNIX Rocks");
 			XSetForeground(dis,gc,rand()%event.xbutton.x%255);
 			XDrawString(dis,win,gc,x,y, text, strlen(text));
 		}
@@ -69,7 +59,7 @@ main () {
 }
 
 void init_x() {
-/* get the colors black and white (see section for details) */        
+/* set the colors black and white */        
 	unsigned long black,white;
 
 	dis=XOpenDisplay((char *)0);
@@ -78,7 +68,7 @@ void init_x() {
 	white=WhitePixel(dis, screen);
    	win=XCreateSimpleWindow(dis,DefaultRootWindow(dis),0,0,	
 		300, 300, 5,black, white);
-	XSetStandardProperties(dis,win,"Howdy","Hi",None,NULL,0,NULL);
+	XSetStandardProperties(dis,win,"Report","E",None,NULL,0,NULL);
 	XSelectInput(dis, win, ExposureMask|ButtonPressMask|KeyPressMask);
         gc=XCreateGC(dis, win, 0,0);        
 	XSetBackground(dis,gc,white);
@@ -87,6 +77,7 @@ void init_x() {
 	XMapRaised(dis, win);
 };
 
+/* Cleanup */
 void close_x() {
 	XFreeGC(dis, gc);
 	XDestroyWindow(dis,win);
