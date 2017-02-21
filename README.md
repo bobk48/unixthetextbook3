@@ -19,6 +19,9 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+Advisory 6. Posted 2/21/17
+To help you with XCB programming in Chapter 22, we have put a Word document, xcb_functions.doc, on this Github site. It contains an alphabetized listing of all of the XCB Core API functions, and all other functions, in a format that you can easily search through with the OfficeLibre or Word find facilities. At the top of the document, there is also a prototype function description that shows how all of the function information is presented.
+
 Advisory 5. Posted 12/5/16
 Added all the Figures in Chapter 3 as .jpegs, which should give you the ability
 to see them more clearly than they appear in the printed book.
