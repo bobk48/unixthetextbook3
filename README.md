@@ -1,6 +1,9 @@
 Welcome to the Github site of UNIX: The Textbook, 3rd edition!
 Follow us at Twitter, @unixthetextbook
 
+Last revised 2/21/117
+
+
 Here you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
 weblinks, and errata, all in Word .doc and .pdf formats.
 Advisory information will be updated regularly, and will give
@@ -58,4 +61,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 12/5/16
+
