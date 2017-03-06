@@ -1,7 +1,7 @@
 Welcome to the Github site of UNIX: The Textbook, 3rd edition!
 Follow us at Twitter, @unixthetextbook
 
-Last revised 2/21/117
+Last revised 3/5/17
 
 
 Here you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
@@ -21,6 +21,9 @@ browser interface.
 You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
+
+Advisory 7. Posted 3/5/17
+Look for an Xlib data structures help guide to be published here in a few days. This will be a useful addition to your documentation for Chapter 22 Xlib programming.
 
 Advisory 6. Posted 2/21/17
 To help you with XCB programming in Chapter 22, we have put a Word document, xcb_functions.doc, on this Github site. It contains an alphabetized listing of all of the XCB Core API functions, and all other functions, in a format that you can easily search through with the OfficeLibre or Word find facilities. At the top of the document, there is also a prototype function description that shows how all of the function information is presented.
