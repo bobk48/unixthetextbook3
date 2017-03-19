@@ -19,6 +19,10 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+
+Advisory 9. Posted 3/19/17 Per Advisory 1., we have decided to provide you with information about using the Desktop version of TrueOS as an alternative to PC-BSD 10.3 (which is still available). The biggest impact of using TrueOS would be felt in Chapter 22, Section 3, since the PC-BSD 10.3 KDE4 Desktop is replaced by the Limina Desktop in TrueOS. An excellent guide to using Desktop TrueOS is currently found at https://www.trueos.org/handbook/trueos.html . Other minor changes to Chapter 23 material, such as no longer being able to launch the PC-BSD User Manager with the command pc-usermanager, would need to be implemented if you decide to install and use TrueOS rather than PC-BSD 10.3.
+Oracle Solaris 11.3 is still active, downloadable, and everything in the printed book still works in Solaris 11.3!
+
 Advisory 8. Posted 3/18/17 We have posted a preliminary Xlib data structure file, in both Word .doc and Adobe .pdf formats, and named Xlib_data_structures. We will be adding material to it in the future to include X Event structures.
 
 Advisory 7. Posted 3/5/17 Look for an Xlib data structures help guide to be published here in a few days. This will be a useful addition to your documentation for Chapter 22 Xlib programming.
@@ -62,4 +66,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 3/18/17
+Last revised 3/19/17
