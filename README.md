@@ -19,6 +19,9 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+Advisory 12. Posted 3/22/17 Be sure to carefully read the license and checksum files provided at our Gitlab site before you download the ISO images for either PC-BSD 10.3 or Solaris 11.3. This file is named PCBSD_Solaris_Licenses_checksums.
+Additionally, in a few days we will be uploading the VirtualBox images for the operating systems listed in Chapter 25 of the printed book. These images will also be covered by the license and checksum file now on the Gitlab site. 
+
 Advisory 11. Posted 3/21/17 We have added the Solaris 11.3 live installation ISO to our Gitlab site repo (as specified in Advisory 10.). It is named sol-11_3-live-x86.iso, and is about 1.2 GB in size, as opposed to the PC-BSD 10.3 ISO which is 3.7 GB. Even though Solaris 11.3 is still available for download from Oracle, if you download our Gitlab ISO and burn it to a DVD, you can accomplish everything shown in the printed book by running Solaris 11.3 from the DVD. Additionally, at the present time, you can install the full Solaris 11.3 from our live ISO image burned to a DVD. Please be aware that the same copyright and licensing restrictions apply to the use of our ISO image as to the Oracle-downloaded ISO image!
 
 Advisory 10. Posted 3/20/17 We have established a Gitlab repo at https://gitlab.com/bobk48/pcbsd103iso that contains the ISO image for PC-BSD 10.3. The ISO image, suitable for burning to a DVD, is named PCBSD10.3-RELEASE-03-31-2016-x64-DVD.iso. In case iXsystems no longer supports pcbsd.org and that image is no longer availble from them, you can use your web browser to navigate to our Gitlab repo, and download the ISO image from there! In the near future, we may also make a VirtualBox image of PC-BSD 10.2 available for use with Chapter 25 of the printed book. And if Solaris 11.3 (or whatever follows that release) is no longer supported by Oracle for downloading, we will make that ISO image available so that the material dealing with Solaris UNIX in the printed book can be used on your own version of Solaris 11.3. Certain copyright and license restrictions may apply, and we will notify you of these constraints as they become known to us.
@@ -69,4 +72,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 3/21/17
+Last revised 3/22/17
