@@ -19,7 +19,7 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
-Advisory 13. Posted 3/24/17 We have uploaded the VitualBox PCBSD10.2-RELEASE-x64-pcbsd-desktop.ova file to the Gitlab site, for your use with Chapter 25 of the printed book. Because of constraints on the size of our Gitlab project, we will not be able to put the PCBSD10.2-RELEASE-x64-pcbsd-desktop.vdi.xz file at the Gitlab repository currently. This may change in the future, so for the time being, you need to follow the download instructions given in Chapter 25 for PCBSD10.2-RELEASE-x64-pcbsd-desktop.vdi.xz!
+Advisory 13. Posted 3/24/17, modified 3/25/17 We have uploaded the VitualBox PCBSD10.2-RELEASE-x64-pcbsd-desktop.ova and the PCBSD10.2-RELEASE-x64-pcbsd-desktop.vdi.xz files to the Gitlab site, for your use with Chapter 25 of the printed book. Both of these files can still be downloaded from pcbsd.org using the instructions given in Chapter 25!
 
 Advisory 12. Posted 3/22/17 Be sure to carefully read the license and checksum files provided at our Gitlab site before you download the ISO images for either PC-BSD 10.3 or Solaris 11.3. This file is named PCBSD_Solaris_Licenses_checksums.
 Additionally, in a few days we will be uploading the VirtualBox images for the operating systems listed in Chapter 25 of the printed book. These images will also be covered by the license and checksum file now on the Gitlab site. 
@@ -74,4 +74,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 3/24/17
+Last revised 3/25/17
