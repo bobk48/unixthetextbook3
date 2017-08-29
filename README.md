@@ -19,6 +19,11 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+Advisory 14. Posted 8/27/17 After careful consideration, we advise you to not use TrueOS in place of
+PC-BSD. There are so many fundamental differences in the GUI's of TrueOS and PC-BSD, that lead to
+decreased functionality of the former. We feel this is detrimental to the learning experience of a
+novice UNIX desktop user.
+
 Advisory 13. Posted 3/24/17, modified 3/25/17 We have uploaded the VitualBox PCBSD10.2-RELEASE-x64-pcbsd-desktop.ova and the PCBSD10.2-RELEASE-x64-pcbsd-desktop.vdi.xz files to the Gitlab site, for your use with Chapter 25 of the printed book. Both of these files can still be downloaded from pcbsd.org using the instructions given in Chapter 25!
 
 Advisory 12. Posted 3/22/17 Be sure to carefully read the license and checksum files provided at our Gitlab site before you download the ISO images for either PC-BSD 10.3 or Solaris 11.3. This file is named PCBSD_Solaris_Licenses_checksums.
@@ -28,7 +33,7 @@ Advisory 11. Posted 3/21/17 We have added the Solaris 11.3 live installation ISO
 
 Advisory 10. Posted 3/20/17 We have established a Gitlab repo at https://gitlab.com/bobk48/pcbsd103iso that contains the ISO image for PC-BSD 10.3. The ISO image, suitable for burning to a DVD, is named PCBSD10.3-RELEASE-03-31-2016-x64-DVD.iso. In case iXsystems no longer supports pcbsd.org and that image is no longer availble from them, you can use your web browser to navigate to our Gitlab repo, and download the ISO image from there! In the near future, we may also make a VirtualBox image of PC-BSD 10.2 available for use with Chapter 25 of the printed book. And if Solaris 11.3 (or whatever follows that release) is no longer supported by Oracle for downloading, we will make that ISO image available so that the material dealing with Solaris UNIX in the printed book can be used on your own version of Solaris 11.3. Certain copyright and license restrictions may apply, and we will notify you of these constraints as they become known to us.
 
-Advisory 9. Posted 3/19/17 Per Advisory 1., we have decided to provide you with information about using the Desktop version of TrueOS as an alternative to PC-BSD 10.3 (which is still available). The biggest impact of using TrueOS would be felt in Chapter 22, Section 3, since the PC-BSD 10.3 KDE4 Desktop is replaced by the Limina Desktop in TrueOS. An excellent guide to using Desktop TrueOS is currently found at https://www.trueos.org/handbook/trueos.html . Other minor changes to Chapter 23 material, such as no longer being able to launch the PC-BSD User Manager with the command pc-usermanager, would need to be implemented if you decide to install and use TrueOS rather than PC-BSD 10.3.
+Advisory 9. RePosted 8/27/17 See Advisory 14.
 Oracle Solaris 11.3 is still active, downloadable, and everything in the printed book still works in Solaris 11.3!
 
 Advisory 8. Posted 3/18/17 We have posted a preliminary Xlib data structure file, in both Word .doc and Adobe .pdf formats, and named Xlib_data_structures. We will be adding material to it in the future to include X Event structures.
@@ -74,4 +79,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 3/25/17
+Last revised 8/27/17
