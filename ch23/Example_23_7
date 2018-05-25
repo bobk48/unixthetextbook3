@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# rsync_daily.sh
+
 # daily local rotating backup with remote script using rsync
 #
 import time
@@ -45,11 +45,11 @@ def backupserver():
 	os.rename( target + "3", target + "4")
 	os.rename( target + "2", target + "3")
 	# do hard copy of 1
-	#os.system('find "' + target + '1" -print | cpio -pdl ' + target +"2")
+	os.system('find "' + target + '1" -print | cpio -pdl ' + target +"2")
 	print "Copy first backup"
 	# copy tree does a full copy whereas cpio does hard link copies (i.e. each copied file
 	# takes up no extra space
-	#shutil.copytree( target + "1", target + "2")
+	shutil.copytree( target + "1", target + "2")
 	os.system('cd "' + target + '1"; find . -print | cpio -pdl "' + target + '2"')
 	print "Rsyncing"
 	# Rsync from local directories to local backup
