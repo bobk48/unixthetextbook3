@@ -1,11 +1,7 @@
 Welcome to the Github site of UNIX: The Textbook, 3rd edition!
 Follow us at Twitter, @unixthetextbook
-
-The CRC Press website for this book, where you will find additional
-materials for the printed book, is-
-https://www.crcpress.com/UNIX-The-Textbook-Third-Edition/Sarwar-Koretsky/p/book/9781482233582
  
-at this GitHub site, you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
+At this GitHub site, you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
 weblinks, and errata, all in Word .doc and .pdf formats.
 Advisory information will be updated regularly, and will give
 important changes in PC-BSD and Solaris since the printing of the book.
@@ -18,6 +14,10 @@ If you follow the instructions in the printed book for Example
 to a git-enabled directory on your own computer! Alternatively,
 you can just download the above-provided materials via a web
 browser interface.
+
+The CRC Press website for this book, where you will find additional
+materials for the printed book, is-
+https://www.crcpress.com/UNIX-The-Textbook-Third-Edition/Sarwar-Koretsky/p/book/9781482233582
 
 You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
