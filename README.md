@@ -1,7 +1,11 @@
 Welcome to the Github site of UNIX: The Textbook, 3rd edition!
 Follow us at Twitter, @unixthetextbook
 
-Here you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
+The CRC Press website for this book, where you will find additional
+materials for the printed book, is-
+https://www.crcpress.com/UNIX-The-Textbook-Third-Edition/Sarwar-Koretsky/p/book/9781482233582
+ 
+at this GitHub site, you will find In-Chapter Exercise Solutions (as ICE_Ch files), 
 weblinks, and errata, all in Word .doc and .pdf formats.
 Advisory information will be updated regularly, and will give
 important changes in PC-BSD and Solaris since the printing of the book.
@@ -79,4 +83,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 8/27/17
+Last revised 10/29/18
