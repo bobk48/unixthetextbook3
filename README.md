@@ -23,6 +23,10 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+Advisory 16. Posted 4/17/2020 Just some informational news here, osdisc.com is no longer in business. This was a great source for UNIX systems pre-built on a variety of media.
+And iXsystems no longer is maintaining or supporting TrueOS, so Advisories 1. & 14. are no longer valid. But you can still download PC-BSD from our GitLab site,
+as detailed in Advisories 10. through 13., along with Solaris 11.3!
+
 Advisory 15. Posted 4/13/2020 iXsystems no longer maintains a web site for download of PC-BSD! But fortunately, per Advisory 10. below, you can still obtain versions of PC-BSD from our GitLab repo.
 
 Advisory 14. Posted 8/27/17 After careful consideration, we advise you to not use TrueOS in place of
@@ -85,4 +89,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 4/13/2020
+Last revised 4/17/2020
