@@ -23,6 +23,23 @@ You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
 
+Advisory 18. Posted 4/20/2020 There's an excellent online User Guide for PC-BSD 10.3 at the following URL:
+
+http://ftp.icm.edu.pl/packages/pcbsd/iso/10.3-RELEASE/amd64/docs/html/pcbsd.html
+
+Advisory 17. Posted 4/20/2020 Since PC-BSD and the AppCafe are no longer supported by iXsystems, and if you've downloaded our PC-BSD ISO from the GitLab site for this book,
+you're going to have to build some of the software we use, most prominently vim. To do this, follow these instructions:
+You have to use the git command. This is the simplest and most efficient way to obtain the latest version of vim, including all patches. 
+The explanations are on the GitHub page, but the following three commands achieve the installation of vim on a UNIX system-
+
+git clone https://github.com/vim/vim.git
+cd vim/src
+make
+
+Please note that some of the other software we show in the book may also need to be built from source, but at this time we don't have a comprehensive listing of those.
+But anywhere in the book we ask you to install software using the AppCafe in PC-BSD, that is a good indication that you will have to install that software on your own,
+either from GitHub sites or other online repositories.
+
 Advisory 16. Posted 4/17/2020 Just some informational news here, osdisc.com is no longer in business. This was a great source for UNIX systems pre-built on a variety of media.
 And iXsystems no longer is maintaining or supporting TrueOS, so Advisories 1. & 14. are no longer valid. But you can still download PC-BSD from our GitLab site,
 as detailed in Advisories 10. through 13., along with Solaris 11.3!
