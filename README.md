@@ -15,13 +15,17 @@ to a git-enabled directory on your own computer! Alternatively,
 you can just download the above-provided materials via a web
 browser interface.
 
-The CRC Press website for this book, where you will find additional
+The newly revised CRC Press website for this book, where you will find additional
 materials for the printed book, is-
-https://www.crcpress.com/UNIX-The-Textbook-Third-Edition/Sarwar-Koretsky/p/book/9781482233582
+https://www.routledge.com/UNIX-The-Textboo-k-Third-Edition/Sarwar-Koretsky/p/book/9780367574352
 
 You can also report any errors you find in the printed book here.
 Just email bobk48@gmail.com, and we will evaluate your error reports
 or any other requests you make, and take appropriate action.
+
+Advisory 19. Posted 8/17/2020 The newly revised CRC Press website for this book can be found at-
+
+https://www.routledge.com/UNIX-The-Textboo-k-Third-Edition/Sarwar-Koretsky/p/book/9780367574352
 
 Advisory 18. Posted 4/20/2020 There's an excellent online User Guide for PC-BSD 10.3 at the following URL:
 
@@ -111,4 +115,4 @@ the 3rd edition. In the meanwhile-
 Keep your eyes on the errata page (posted here as a Word .doc file), 
 and any other Advisories we show here.
 
-Last revised 4/22/2020
+Last revised 8/17/2020
